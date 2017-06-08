@@ -25,8 +25,8 @@ public class Sketch : MonoBehaviour
         //We can now deserialize into an array of objects - in this case the class we created. The deserializer is smart enough to instantiate all the classes and populate the variables based on column name.
         RevenueTest2[] Revenue1 = JsonReader.Deserialize<RevenueTest2[]>(jsonResponse);
 
-        int totalCubes = Revenue1.Length;
-        int totalDistance = 5;
+        int totalCubes = 10; //Revenue1.Length;
+        int totalDistance = 1; //4;//5;
         int i = 0;
         //We can now loop through the array of objects and access each object individually
         foreach (RevenueTest2 Revenue2 in Revenue1)
@@ -36,7 +36,7 @@ public class Sketch : MonoBehaviour
             float perc = i / (float)totalCubes;
             i++;
             float x = perc * totalDistance;
-            float y = Revenue2.Units; //5.0f;
+            float y = Revenue2.Units;//5.0f;
             float z = 0.0f;
             GameObject SpinCube1 = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
             SpinCube1.GetComponent<myCubeScript>().setSize((1.0f - perc) * 2);

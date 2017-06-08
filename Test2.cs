@@ -36,7 +36,7 @@ public class Sketch : MonoBehaviour
             float perc = i / (float)totalCubes;
             i++;
             float x = perc * totalDistance;
-            float y = 5.0f;
+            float y = Revenue2.Units; //5.0f;
             float z = 0.0f;
             GameObject SpinCube1 = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
             SpinCube1.GetComponent<myCubeScript>().setSize((1.0f - perc) * 2);
